@@ -10,9 +10,11 @@ Files is a modern file manager that helps users organize their files and folders
 > 
 > It's unlikely it will work as well for most people as the standard version available [here](https://github.com/files-community/files).
 
-## Key Changes
+## Key Changes (WIP)
 
-TBD
+- Tighter integration with my NextCloud and other self hosted services.
+- Support for additional custom file and folder metadata.
+- Support for nextcloud still folder readmes and file readmes.
 
 ## Building from source
 
