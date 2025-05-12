@@ -28,8 +28,9 @@ namespace Files.App.Utils.Cloud
 			}
 		}
 
-		public static async Task UpdateDrivesAsync()
+		public static Task UpdateDrivesAsync()
 		{
+#if !DISABLE_CLOUD
 			var providers = await _detector.DetectCloudProvidersAsync();
 			if (providers is null)
 				return;
@@ -106,6 +107,9 @@ namespace Files.App.Utils.Cloud
 					new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, cloudProviderItem)
 				);
 			}
+#else
+			return Task.CompletedTask;
+#endif
 		}
 	}
 }

@@ -24,10 +24,11 @@ namespace Files.App.Utils
 			}
 		}
 
-		public static async Task UpdateDrivesAsync()
+		public static Task UpdateDrivesAsync()
 		{
 			try
 			{
+#if !DISABLE_WSL
 				// Check if WSL is installed
 				const string WslRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\MSI";
 				using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(WslRegistryPath))
@@ -59,10 +60,14 @@ namespace Files.App.Utils
 					}
 					DataChanged?.Invoke(SectionType.WSL, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, distro));
 				}
+#else
+				return Task.CompletedTask;
+#endif
 			}
 			catch (Exception)
 			{
 				// WSL Not Supported/Enabled
+				return Task.CompletedTask;
 			}
 		}
 
