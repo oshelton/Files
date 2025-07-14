@@ -6,6 +6,9 @@
 Files is a modern file manager that helps users organize their files and folders. Our mission with Files is to build the best file manager for Windows, and we’re proud to be building it out in the open so everyone can participate. User feedback helps shape the features we work on, & the bug reports on GitHub help to make Files more reliable. Built and maintained by the open-source community, Files features robust multitasking experiences, file tags, deep integrations, and an intuitive design.
 
 > [!IMPORTANT]
+> I've archived this repo and chosen to implement this functionality in a new application.
+
+> [!IMPORTANT]
 > This is my personal fork of Files that addresses my specific needs and integrations within my homelab.  
 > 
 > It's unlikely it will work as well for most people as the standard version available [here](https://github.com/files-community/files).
